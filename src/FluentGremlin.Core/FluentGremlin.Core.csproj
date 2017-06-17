@@ -40,11 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edge.cs" />
+    <Compile Include="GraphTraversal.cs" />
     <Compile Include="IGraphTraversal.cs" />
     <Compile Include="IGraphTraversalProvider.cs" />
     <Compile Include="IGraphTraversalSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StepType.cs" />
+    <Compile Include="Vertex.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
