@@ -3,8 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{57C5D9C9-D129-4AD5-8192-D3166492D9A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D4D4CE52-6A83-492A-8EF0-9BCAA646455E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGremlin.Core", "src\FluentGremlin.Core\FluentGremlin.Core.csproj", "{9FE775FB-CE50-41E3-AF35-2A1F0970F4F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGremlin.Tests", "test\FluentGremlin.Tests\FluentGremlin.Tests.csproj", "{DAC04BAE-27D8-45E7-A2B9-81E3CE7C1641}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FE775FB-CE50-41E3-AF35-2A1F0970F4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FE775FB-CE50-41E3-AF35-2A1F0970F4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FE775FB-CE50-41E3-AF35-2A1F0970F4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FE775FB-CE50-41E3-AF35-2A1F0970F4F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC04BAE-27D8-45E7-A2B9-81E3CE7C1641}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC04BAE-27D8-45E7-A2B9-81E3CE7C1641}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC04BAE-27D8-45E7-A2B9-81E3CE7C1641}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC04BAE-27D8-45E7-A2B9-81E3CE7C1641}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9FE775FB-CE50-41E3-AF35-2A1F0970F4F2} = {57C5D9C9-D129-4AD5-8192-D3166492D9A0}
+		{DAC04BAE-27D8-45E7-A2B9-81E3CE7C1641} = {D4D4CE52-6A83-492A-8EF0-9BCAA646455E}
 	EndGlobalSection
 EndGlobal
