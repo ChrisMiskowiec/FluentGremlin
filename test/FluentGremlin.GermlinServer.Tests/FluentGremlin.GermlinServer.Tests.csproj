@@ -43,17 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="QueryBuilderVisitorTests.cs" />
+    <Compile Include="GraphTraversalSourceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\FluentGremlin.Core\FluentGremlin.Core.csproj">
+      <Project>{9fe775fb-ce50-41e3-af35-2a1f0970f4f2}</Project>
+      <Name>FluentGremlin.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\FluentGremlin.GremlinServer\FluentGremlin.GremlinServer.csproj">
       <Project>{cf21ad11-61b2-41c7-b1ce-80b27501216c}</Project>
       <Name>FluentGremlin.GremlinServer</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

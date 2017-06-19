@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FluentGremlin.GermlinServer.Tests
+namespace FluentGremlin.Core
 {
-    public class Class1
+    class IVertex
     {
     }
 }
