@@ -74,7 +74,6 @@ namespace FluentGremlin.GremlinServer
             var visitedExpression = Visit(expression);
             var query = ((Func<string>)Expression.Lambda(visitedExpression).Compile().DynamicInvoke())();
             return query;
-            //return (string)((LambdaExpression)expression).Compile().DynamicInvoke();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.7
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{57C5D9C9-D129-4AD5-8192-D3166492D9A0}"
 EndProject
@@ -14,6 +14,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGremlin.GremlinServer", "src\FluentGremlin.GremlinServer\FluentGremlin.GremlinServer.csproj", "{CF21AD11-61B2-41C7-B1CE-80B27501216C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGremlin.GermlinServer.Tests", "test\FluentGremlin.GermlinServer.Tests\FluentGremlin.GermlinServer.Tests.csproj", "{A99CAEA6-B48C-45B1-9022-559193C643DE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F82FB5C-6F14-4922-A97C-0C475F96C063}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
