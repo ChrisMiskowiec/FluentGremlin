@@ -30,11 +30,29 @@ namespace FluentGremlin.GremlinServer
                 mappedName = node.Method.Name.Substring(0, 1).ToLower() + node.Method.Name.Substring(1);
             }
 
-            var args = node.Arguments.Skip(1)
+            var args = GetArguments(node)
                 .Select(a => (string)((LambdaExpression)Visit(a)).Compile().DynamicInvoke())
                 .ToArray();
             Expression<Func<string>> f = () => $"{obj}.{mappedName}({string.Join(", ", args)})";
             return f;
+        }
+
+        private IEnumerable<Expression> GetArguments(MethodCallExpression node)
+        {
+            var args = node.Arguments.Skip(1);
+            if (!args.Any())
+            {
+                return new Expression[] { };
+            }
+
+            if (args.Last() is ConstantExpression c && c.Value is Expression[] e)
+            {
+                return args.TakeWhile(arg => arg != c).Concat(e);
+            }
+            else
+            {
+                return args;
+            }
         }
 
         protected override Expression VisitConstant(ConstantExpression node)
@@ -49,9 +67,9 @@ namespace FluentGremlin.GremlinServer
             {
                 return RawLiteral("g");
             }
-            else if (node.Value is bool)
+            else if (node.Value is bool b)
             {
-                return RawLiteral(node.Value.ToString().ToLower());
+                return RawLiteral(b.ToString().ToLower());
             }
             else
             {

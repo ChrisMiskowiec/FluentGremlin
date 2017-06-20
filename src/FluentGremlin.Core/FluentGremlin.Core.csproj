@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Edge.cs" />
     <Compile Include="GraphTraversal.cs" />
+    <Compile Include="GremlinSyntaxException.cs" />
     <Compile Include="IGraphTraversal.cs" />
     <Compile Include="IGraphTraversalProvider.cs" />
     <Compile Include="IGraphTraversalSource.cs" />

@@ -78,6 +78,24 @@ namespace FluentGremlin.Core
                 Expression.Constant(propertyValue)));
         }
 
+        public static IGraphTraversal<TSource> Property<TSource>(this IGraphTraversal<TSource> source, params object[] args)
+        {
+            if (args == null || args.Length == 0)
+            {
+                throw new GremlinSyntaxException("Property list cannot be null or empty.");
+            }
+            if (args.Length % 2 != 0)
+            {
+                throw new GremlinSyntaxException("Property requires an even number of arguments, as name-value pairs.");
+            }
+
+            return source.Provider.CreateTraversal<TSource>(Expression.Call(
+                null,
+                new Func<IGraphTraversal<TSource>, object[], IGraphTraversal<TSource>>(GraphTraversal.Property).GetMethodInfo().GetGenericMethodDefinition().MakeGenericMethod(typeof(TSource)),
+                source.Expression,
+                Expression.Constant(args.Select(o => Expression.Constant(o)).ToArray())));
+        }
+
         public static IGraphTraversal<Vertex> Has<TValue>(this IGraphTraversal<Vertex> source, string propertyName, TValue propertyValue)
         {
             return source.Provider.CreateTraversal<Vertex>(Expression.Call(

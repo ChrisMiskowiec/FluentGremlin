@@ -2,10 +2,6 @@
 using FluentGremlin.GremlinServer;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FluentGremlin.GermlinServer.Tests
 {
@@ -44,6 +40,17 @@ namespace FluentGremlin.GermlinServer.Tests
             var gremlin = query.GetQuery();
 
             Assert.That(gremlin, Is.EqualTo("g.V().property('id', '92bcee7b-c3b5-405a-9bd8-27dd4a635843')"));
+        }
+
+        [Test]
+        public void Property_WithMultipleProperties()
+        {
+            var g = new GremlinServerSource();
+            var query = g.V(1).Property("name", "bob", "age", 32);
+
+            var gremlin = query.GetQuery();
+
+            Assert.That(gremlin, Is.EqualTo("g.V(1).property('name', 'bob', 'age', 32)"));
         }
     }
 }

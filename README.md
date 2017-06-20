@@ -4,9 +4,9 @@
 
 | Traversal Step | Gremlin Server Provider | DocumentDB Provider |
 | --- | --- | --- |
-| AddEdge | [x] | [ ] |
-| AddVertex | [x] | [ ] |
-| AddProperty | [ ] | [ ] |
+| AddEdge | :white_check_mark: |  |
+| AddVertex | :white_check_mark: | [ ] |
+| AddProperty | :white_check_mark: | [ ] |
 | Aggregate | [ ] | [ ] |
 | And | [ ] | [ ] |
 | As | [ ] | [ ] |
