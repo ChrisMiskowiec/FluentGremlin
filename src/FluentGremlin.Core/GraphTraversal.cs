@@ -31,6 +31,16 @@ namespace FluentGremlin.Core
                 Expression.Constant(id)));
         }
 
+        public static IGraphTraversal<Vertex> Has<TValue>(this IGraphTraversal<Vertex> source, string propertyName, TValue propertyValue)
+        {
+            return source.Provider.CreateTraversal<Vertex>(Expression.Call(
+                null,
+                new Func<IGraphTraversal<Vertex>, string, TValue, IGraphTraversal<Vertex>>(GraphTraversal.Has).GetMethodInfo().GetGenericMethodDefinition().MakeGenericMethod(typeof(TValue)),
+                source.Expression,
+                Expression.Constant(propertyName),
+                Expression.Constant(propertyValue)));
+        }
+
         public static IGraphTraversal<Vertex> Out(this IGraphTraversal<Vertex> source, string edgeLabel)
         {
             return source.Provider.CreateTraversal<Vertex>(Expression.Call(

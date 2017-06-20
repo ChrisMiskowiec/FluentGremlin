@@ -23,23 +23,8 @@ namespace FluentGremlin.GremlinServer
 
         public string ToGremlinQuery(Expression expression)
         {
-            switch (expression)
-            {
-                case MethodCallExpression methodCall:
-                    return ToGremlinQuery(methodCall.Arguments[0]) + "." + methodCall.Method.Name + "()";
-
-                case ConstantExpression constant:
-                    if (constant.Value is GremlinServerSource)
-                    {
-                        return "g";
-                    }
-                    else
-                    {
-                        throw new InvalidOperationException("Unknown constant");
-                    }
-                default:
-                    throw new InvalidOperationException("Unknown expression");
-            }
+            var visitor = new QueryBuilderVisitor();
+            return visitor.BuildQuery(expression);
         }
     }
 }

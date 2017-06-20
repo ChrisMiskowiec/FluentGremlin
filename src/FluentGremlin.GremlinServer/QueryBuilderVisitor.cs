@@ -13,8 +13,7 @@ namespace FluentGremlin.GremlinServer
             new Dictionary<string, string>()
             {
                 ["E"] = "E",
-                ["V"] = "V",
-                ["AddV"] = "addV"
+                ["V"] = "V"
             };
 
         protected override Expression VisitMethodCall(MethodCallExpression node)
@@ -26,33 +25,55 @@ namespace FluentGremlin.GremlinServer
 
             var obj = (string)((LambdaExpression)Visit(node.Arguments.First())).Compile().DynamicInvoke();
 
-            var method = _methodNameMap[node.Method.Name];
+            if (!_methodNameMap.TryGetValue(node.Method.Name, out var mappedName))
+            {
+                mappedName = node.Method.Name.Substring(0, 1).ToLower() + node.Method.Name.Substring(1);
+            }
 
             var args = node.Arguments.Skip(1)
                 .Select(a => (string)((LambdaExpression)Visit(a)).Compile().DynamicInvoke())
                 .ToArray();
-            Expression<Func<string>> f = () => $"{obj}.{method}({string.Join(", ", args)})";
+            Expression<Func<string>> f = () => $"{obj}.{mappedName}({string.Join(", ", args)})";
             return f;
         }
 
         protected override Expression VisitConstant(ConstantExpression node)
         {
-            switch (node.Value)
+            var numericTypes = new HashSet<Type>() { typeof(short), typeof(int), typeof(long), typeof(float), typeof(double), typeof(decimal) };
+
+            if (numericTypes.Contains(node.Type))
             {
-                case GremlinServerSource _:
-                    return (Expression<Func<string>>)(() => "g");
-                case string s:
-                    return (Expression<Func<string>>)(() => $"\"{s}\"");
-                default:
-                    var value = node.Value.ToString();
-                    return (Expression<Func<string>>)(() => value);
+                return RawLiteral(node.Value);
             }
+            else if (node.Value is GremlinServerSource)
+            {
+                return RawLiteral("g");
+            }
+            else if (node.Value is bool)
+            {
+                return RawLiteral(node.Value.ToString().ToLower());
+            }
+            else
+            {
+                return QuotedLiteral(node.Value);
+            }
+        }
+
+        private Expression RawLiteral(object o)
+        {
+            return (Expression<Func<string>>)(() => o.ToString());
+        }
+
+        private Expression QuotedLiteral(object o)
+        {
+            return (Expression<Func<string>>)(() => $"'{o}'");
         }
 
         public string BuildQuery(Expression expression)
         {
-            var exp = Visit(expression);
-            return (string)Expression.Lambda(exp).Compile().DynamicInvoke();
+            var visitedExpression = Visit(expression);
+            var query = ((Func<string>)Expression.Lambda(visitedExpression).Compile().DynamicInvoke())();
+            return query;
             //return (string)((LambdaExpression)expression).Compile().DynamicInvoke();
         }
     }
