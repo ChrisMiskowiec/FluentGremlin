@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryBuilderVisitor_AddV_Tests.cs" />
     <Compile Include="QueryBuilderVisitor_AddE_Tests.cs" />
+    <Compile Include="QueryBuilderVisitor_As_Tests.cs" />
     <Compile Include="QueryBuilderVisitor_Property_Tests.cs" />
     <Compile Include="QueryBuilderVisitor_Out_Tests.cs" />
     <Compile Include="QueryBuilderVisitor_Has_Tests.cs" />

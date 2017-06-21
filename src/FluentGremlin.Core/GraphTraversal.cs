@@ -68,6 +68,15 @@ namespace FluentGremlin.Core
                 Expression.Constant(label)));
         }
 
+        public static IGraphTraversal<TSource> As<TSource>(this IGraphTraversal<TSource> source, string label)
+        {
+            return source.Provider.CreateTraversal<TSource>(Expression.Call(
+                null,
+                new Func<IGraphTraversal<TSource>, string, IGraphTraversal<TSource>>(GraphTraversal.As).GetMethodInfo().GetGenericMethodDefinition().MakeGenericMethod(typeof(TSource)),
+                source.Expression,
+                Expression.Constant(label)));
+        }
+
         public static IGraphTraversal<TSource> Property<TSource, TValue>(this IGraphTraversal<TSource> source, string propertyName, TValue propertyValue)
         {
             return source.Provider.CreateTraversal<TSource>(Expression.Call(
