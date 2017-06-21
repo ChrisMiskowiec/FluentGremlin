@@ -8,90 +8,90 @@
 | AddVertex | :white_check_mark: |  |
 | AddProperty | :white_check_mark: |  |
 | Aggregate |  |  |
-| And |  |  |
-| As |  |  |
+| And | :one: |  |
+| As | :white_check_mark: |  |
 | Barrier |  |  |
-| Both |  |  |
-| BothE |  |  |
-| BothV |  |  |
+| Both | :one: |  |
+| BothE | :one: |  |
+| BothV | :one: |  |
 | By |  |  |
 | Cap |  |  |
 | Choose |  |  |
-| Coalesce |  |  |
+| Coalesce | :one: |  |
 | Coin |  |  |
-| Constant |  |  |
-| Count |  |  |
+| Constant | :one: |  |
+| Count | :one: |  |
 | CyclicPath |  |  |
-| Dedup |  |  |
-| Drop |  |  |
+| Dedup | :one: |  |
+| Drop | :one: |  |
 | Explain |  |  |
-| Fold |  |  |
+| Fold | :one: |  |
 | Graph |  |  |
 | From |  |  |
-| Group |  |  |
+| Group | :one: |  |
 | GroupCount |  |  |
-| Has (key) |  |  |
+| Has (key) | :one: |  |
 | Has (key, value) | :white_check_mark: |  |
-| Has (label, key, value) |  |  |
-| Has (key, predicate) |  |  |
-| Has (key, traversal) |  |  |
-| HasId |  |  |
-| HasKey |  |  |
-| HasLabel |  |  |
-| HasNot |  |  |
-| HasValue |  |  |
-| Id |  |  |
-| In |  |  |
-| InE |  |  |
-| InV |  |  |
-| Inject |  |  |
-| Is |  |  |
+| Has (label, key, value) | :one: |  |
+| Has (key, predicate) | :one: |  |
+| Has (key, traversal) | :one: |  |
+| HasId | :one: |  |
+| HasKey | :one: |  |
+| HasLabel | :one: |  |
+| HasNot | :one: |  |
+| HasValue | :one: |  |
+| Id | :one: |  |
+| In | :one: |  |
+| InE | :one: |  |
+| InV | :one: |  |
+| Inject | :one: |  |
+| Is | :one: |  |
 | Label |  |  |
 | Key |  |  |
-| Limit |  |  |
-| Local |  |  |
+| Limit | :one: |  |
+| Local | :one: |  |
 | Loops |  |  |
 | Match |  |  |
 | Max |  |  |
 | Mean |  |  |
 | Min |  |  |
-| Not |  |  |
+| Not | :one: |  |
 | Option |  |  |
-| Optional |  |  |
-| Or |  |  |
-| Order |  |  |
-| OtherV |  |  |
-| Out |  |  |
-| OutE |  |  |
-| OutV |  |  |
+| Optional | :one: |  |
+| Or | :one: |  |
+| Order | :one: |  |
+| OtherV | :one: |  |
+| Out | :one: |  |
+| OutE | :one: |  |
+| OutV | :one: |  |
 | PageRank |  |  |
-| Path |  |  |
+| Path | :one: |  |
 | PeerPressure |  |  |
 | Profile |  |  |
-| Project |  |  |
+| Project | :one: |  |
 | Program |  |  |
-| Properties |  |  |
+| Properties | :one: |  |
 | PropertyMap |  |  |
-| Range |  |  |
-| Repeat |  |  |
+| Range | :one: |  |
+| Repeat | :one: |  |
 | Sack |  |  |
-| Sample |  |  |
-| Select |  |  |
+| Sample | :one: |  |
+| Select | :one: |  |
 | SimplePath |  |  |
-| Store |  |  |
+| Store | :one: |  |
 | Subgraph |  |  |
 | Sum |  |  |
 | Tail |  |  |
 | TimeLimit |  |  |
 | To |  |  |
-| Tree |  |  |
-| Unfold |  |  |
-| Union |  |  |
+| Tree | :one: |  |
+| Unfold | :one: |  |
+| Union | :one: |  |
 | Value |  |  |
 | ValueMap |  |  |
-| Values |  |  |
-| Vertex |  |  |
-| Where |  |  |
+| Values | :one: |  |
+| Vertex | :white_check_mark: |  |
+| Where | :one: |  |
 
 ## Other Features
 | Feature | Gremlin Server Provider | Document DB |
