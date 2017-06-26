@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -70,6 +71,9 @@ namespace FluentGremlin.GremlinServer
             else if (node.Value is bool b)
             {
                 return RawLiteral(b.ToString().ToLower());
+            }
+            else if (node.Type is IEnumerable e)
+            {
             }
             else
             {

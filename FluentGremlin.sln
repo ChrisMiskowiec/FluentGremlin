@@ -20,6 +20,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGremlin.DocumentDB", "src\FluentGremlin.DocumentDB\FluentGremlin.DocumentDB.csproj", "{38B986F6-5023-4A01-AD6C-A9425E5548D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentGremlin.DocumentDB.Tests", "test\FluentGremlin.DocumentDB.Tests\FluentGremlin.DocumentDB.Tests.csproj", "{F54A68E8-81AA-4928-BE2F-93484823F8D9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,14 @@ Global
 		{A99CAEA6-B48C-45B1-9022-559193C643DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A99CAEA6-B48C-45B1-9022-559193C643DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A99CAEA6-B48C-45B1-9022-559193C643DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38B986F6-5023-4A01-AD6C-A9425E5548D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38B986F6-5023-4A01-AD6C-A9425E5548D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38B986F6-5023-4A01-AD6C-A9425E5548D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38B986F6-5023-4A01-AD6C-A9425E5548D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F54A68E8-81AA-4928-BE2F-93484823F8D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F54A68E8-81AA-4928-BE2F-93484823F8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F54A68E8-81AA-4928-BE2F-93484823F8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F54A68E8-81AA-4928-BE2F-93484823F8D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,5 +63,7 @@ Global
 		{DAC04BAE-27D8-45E7-A2B9-81E3CE7C1641} = {D4D4CE52-6A83-492A-8EF0-9BCAA646455E}
 		{CF21AD11-61B2-41C7-B1CE-80B27501216C} = {57C5D9C9-D129-4AD5-8192-D3166492D9A0}
 		{A99CAEA6-B48C-45B1-9022-559193C643DE} = {D4D4CE52-6A83-492A-8EF0-9BCAA646455E}
+		{38B986F6-5023-4A01-AD6C-A9425E5548D7} = {57C5D9C9-D129-4AD5-8192-D3166492D9A0}
+		{F54A68E8-81AA-4928-BE2F-93484823F8D9} = {D4D4CE52-6A83-492A-8EF0-9BCAA646455E}
 	EndGlobalSection
 EndGlobal

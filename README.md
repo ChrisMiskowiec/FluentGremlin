@@ -30,7 +30,7 @@
 | From |  |  |
 | Group | :one: |  |
 | GroupCount |  |  |
-| Has (key) | :one: |  |
+| Has (key) | :white_check_mark: |  |
 | Has (key, value) | :white_check_mark: |  |
 | Has (label, key, value) | :one: |  |
 | Has (key, predicate) | :one: |  |
